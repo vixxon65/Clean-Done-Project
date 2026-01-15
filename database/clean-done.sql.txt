@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS clean_done;
+USE clean_done;
+
+CREATE TABLE IF NOT EXISTS tasks (
+  task_id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(200) NOT NULL,
+  room VARCHAR(100) NOT NULL,
+  frequency VARCHAR(30) NOT NULL,
+  due_date DATE NOT NULL,
+  estimated_minutes INT NOT NULL,
+  priority INT NOT NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1
+);
+
+(Optional seed data)
+
+INSERT INTO tasks (title, room, frequency, due_date, estimated_minutes, priority, is_active)
+VALUES
+('Wipe kitchen counters', 'Kitchen', 'Daily', CURDATE(), 10, 1, 1);
